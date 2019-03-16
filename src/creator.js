@@ -30,10 +30,10 @@ let prepareAjaxMethod = (url) => (options = {}) => {
 
 export function use(apiObj) {
   Object.keys(apiObj).forEach(key => {
-    if (typeof key === 'string') {
+    if (typeof apiObj[key] === 'string') {
       apiObj[key] = prepareAjaxMethod(apiObj[key])
-    } else if (typeof key === 'object') {
-      apiObj[key] = generate(apiObj[key]);
+    } else if (typeof apiObj[key] === 'object') {
+      use(apiObj[key]);
     } else {
       throw new Error('the api definination is error.');
     }

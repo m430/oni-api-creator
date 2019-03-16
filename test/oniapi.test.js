@@ -1,14 +1,9 @@
 import OniApi from '../src/index';
 import Auth from './auth';
 
-OniApi.interceptors.request.use(
-  (config) => {
-    return config
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-)
+const api = {
+  Auth
+}
 
 OniApi.interceptors.response.use(
   (res) => {
@@ -18,14 +13,13 @@ OniApi.interceptors.response.use(
     return Promise.reject(error);
   }
 )
-OniApi.use(Auth);
-
+OniApi.use(api);
 
 test('test OniApi', () => {
-  return Auth.login({
+  return api.Auth.login({
     data: {
       username: 'root',
-      password: "dsds"
+      password: "F781A7EA5252604FCDA90263F8FB3E8E"
     }
   }).then(res => {
     expect(res.errorCode).toBe(0);
