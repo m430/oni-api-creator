@@ -1,4 +1,4 @@
 export default {
-  login: 'POST http://localhost:8000/api/v1/auth/login',
+  login: 'POST /api/v1/auth/login/{schemaId}/{id}',
   logout: 'GET /api/v1/auth/logout',
 }

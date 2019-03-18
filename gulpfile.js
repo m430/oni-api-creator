@@ -45,6 +45,10 @@ gulp.task(
 gulp.task('publish',
   gulp.series('check-git', 'default', done => {
     tag();
+    runCmd('npm', ['publish'], (code) => {
+      console.log(`npm publish version ${packageJson.version} successfully`);
+      done(code);
+    });
     done();
   })
 )

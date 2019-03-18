@@ -15,8 +15,3 @@ export function getMethodType(url) {
     url: urls[1]
   }
 };
-
-export function stringify(obj) {
-  const qs = Object.keys(obj).reduce((prev, next, index) => `${prev}${index > 0 ? '&' : ''}${next}=${obj[next]}`, "");
-  return encodeURIComponent(qs);
-}

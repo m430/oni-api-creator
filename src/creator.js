@@ -1,6 +1,6 @@
 import axios from "axios";
-import { getMethodType, getPathParams, stringify } from './util';
-import Axios from "axios";
+import { getMethodType, getPathParams } from './util';
+import qs from 'qs';
 
 let prepareAjaxMethod = (url) => (options = {}) => {
 
@@ -15,11 +15,11 @@ let prepareAjaxMethod = (url) => (options = {}) => {
     }
   }, config.url);
 
-  config.url = newUrl;
-
   if (options.queryParams) {
-    newUrl = `${newUrl}?${stringify(options.queryParams)}`;
+    newUrl = `${newUrl}?${qs.stringify(options.queryParams)}`;
   }
+
+  config.url = newUrl;
   delete options.pathParams;
   delete options.queryParams;
 

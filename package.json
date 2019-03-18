@@ -1,6 +1,6 @@
 {
   "name": "oni-api-creator",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "oni api is just a convenient tool for craete apis.",
   "main": "lib/index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   "author": "andy",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "qs": "^6.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
