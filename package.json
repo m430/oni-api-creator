@@ -1,6 +1,6 @@
 {
   "name": "oni-api-creator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "oni api is just a convenient tool for craete apis.",
   "main": "lib/index.js",
   "scripts": {

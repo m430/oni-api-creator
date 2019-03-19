@@ -8,6 +8,7 @@ let prepareAjaxMethod = (url) => (options = {}) => {
   let pathParams = getPathParams(config.url);
   let newUrl = pathParams.reduce((originUrl, pathParam) => {
     let paramVal = options.pathParams[pathParam];
+    if (typeof paramVal === 'boolean') paramVal = `${paramVal}`;
     if (paramVal) {
       return originUrl.replace(`{${pathParam}}`, paramVal);
     } else {
