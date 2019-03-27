@@ -21,12 +21,14 @@ let prepareAjaxMethod = (url) => (options = {}) => {
   }
 
   config.url = newUrl;
-  delete options.pathParams;
-  delete options.queryParams;
+  let newOptions = { ...options };
+  delete newOptions.pathParams;
+  delete newOptions.queryParams;
 
-  options = Object.assign( config , options);
 
-  return axios(options);
+  newOptions = Object.assign(config, newOptions);
+
+  return axios(newOptions);
 };
 
 export function use(apiObj) {
