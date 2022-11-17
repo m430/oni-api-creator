@@ -5,6 +5,8 @@ const api = {
   Auth
 }
 
+OniApi.env = 'mp';
+
 OniApi.interceptors.response.use(
   (res) => {
     console.log(res);
@@ -35,9 +37,7 @@ test('test OniApi', () => {
   }).then(res => {
     expect(res.errorCode).toBe(0);
     if (res.errorCode === 0) {
-      console.log(res.data);
     }
   }).catch(err => {
-    console.log(err);
   })
 })
